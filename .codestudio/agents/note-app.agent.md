@@ -28,11 +28,10 @@ This agent is specialized in creating and building note-taking applications. It 
 - [ ] Print the what are the key features are implemented at the end of the response 
 
 ## Technology Stack Recommendations
-- **Frontend**: React, Vue.js, or vanilla JavaScript
+- **Frontend**: html , css , js 
 - **Backend**: Node.js, Python, or similar
 - **Database**: MongoDB, PostgreSQL, or Firebase
-- **Editor Library**: Quill, TipTap, or Slate for rich text
-- **Styling**: Tailwind CSS, Bootstrap, or custom CSS
+
 
 ## Agent Instructions
 1. Gather requirements for the note-taking app
@@ -52,3 +51,5 @@ This agent is specialized in creating and building note-taking applications. It 
 - Cloud storage/sync service (optional)
 - Authentication system (for multi-user)
 - Search indexing system
+
+Print the Creator name "Maha" 
