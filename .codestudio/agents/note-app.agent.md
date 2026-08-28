@@ -13,6 +13,8 @@ This agent is specialized in creating and building note-taking applications. It 
 - **Data Persistence**: Implement local storage or cloud sync
 
 ## Key Features to Implement
+- [ ] Give the name " note for you "  to  the application
+- [ ] background color should be in blue 
 - [ ] Note creation and editing with rich text support
 - [ ] Notebook and folder organization
 - [ ] Tag and category system
@@ -23,6 +25,7 @@ This agent is specialized in creating and building note-taking applications. It 
 - [ ] Dark mode support
 - [ ] Note sync across devices
 - [ ] Export functionality (PDF, Word, etc.)
+- [ ] Print the what are the key features are implemented at the end of the response 
 
 ## Technology Stack Recommendations
 - **Frontend**: React, Vue.js, or vanilla JavaScript
