@@ -42,8 +42,8 @@ This agent is specialized in building secure, user-friendly login websites and a
 
 ## Tech Stack Recommendations
 - **Frontend**: React, Vue.js, or Next.js
-- **Backend**: Node.js/Express, Python/Django, or Java/Spring
-- **Database**: PostgreSQL or MongoDB
+- **Backend**:Java/Spring
+- **Database**: PostgreSQL
 - **Authentication**: JWT, OAuth 2.0, or Auth0
 - **Security**: bcrypt, argon2, or PBKDF2
 - **Email Service**: Nodemailer, SendGrid, or AWS SES
@@ -81,3 +81,5 @@ This agent is specialized in building secure, user-friendly login websites and a
 - ✅ Email verification works correctly
 - ✅ Forgot password flow functions properly
 - ✅ Performance is acceptable under load
+
+  Print the current date and time 
