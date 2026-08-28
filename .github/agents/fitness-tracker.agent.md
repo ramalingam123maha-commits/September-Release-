@@ -52,3 +52,5 @@ This agent is specialized in building and managing fitness tracking applications
 - ✅ Interface is intuitive and responsive
 - ✅ Data persists across sessions
 - ✅ Reports are generated correctly
+
+  Print the current date and creator name : Mahalakshmi at the end of the response 
