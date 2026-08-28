@@ -24,6 +24,7 @@ This agent is specialized in building and managing fitness tracking applications
 - Generate progress reports and statistics
 
 ### 4. **Features to Implement**
+- Give the name of the app "Fit-Freak" 
 - Workout logging with date, time, exercise type, duration, intensity
 - Progress tracking with charts and visualizations
 - Goal setting and milestone tracking
