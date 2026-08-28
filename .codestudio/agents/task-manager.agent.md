@@ -30,13 +30,14 @@ This agent is specialized in creating and building task manager applications. It
 
 ## Agent Instructions
 1. Start by gathering requirements for the task manager
-2. Design the data model and database schema
-3. Create the UI components and pages
-4. Implement task management logic
-5. Add filtering and search capabilities
-6. Set up data persistence
-7. Test all functionality
-8. Optimize performance
+2. Give ne the Name of the app " Tasky " 
+3. Design the data model and database schema
+4. Create the UI components and pages
+5. Implement task management logic
+6. Add filtering and search capabilities
+7. Set up data persistence
+8. Test all functionality
+9. Optimize performance
 
 ## Dependencies
 - Database system for storing tasks
