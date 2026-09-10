@@ -1,0 +1,12 @@
+radon==6.1
+pylint==3.0.3
+ast-decompiler==0.8.0
+tree-sitter==0.20.4
+tree-sitter-python==0.20.4
+tree-sitter-java==0.20.4
+tree-sitter-cpp==0.20.4
+tree-sitter-typescript==0.20.4
+Jinja2==3.1.2
+click==8.1.7
+colorama==0.4.6
+pydantic==2.5.0

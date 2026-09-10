@@ -1,0 +1,2117 @@
+{
+  "files": [
+    {
+      "file_path": "examples/sample.py",
+      "language": "python",
+      "functions": [
+        {
+          "name": "duplicate_validation",
+          "parameters": [
+            {
+              "name": "data",
+              "type": "Any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "Any",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "another_validation",
+          "parameters": [
+            {
+              "name": "items",
+              "type": "Any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "Any",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "calculate_discount",
+          "parameters": [
+            {
+              "name": "price",
+              "type": "float",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "float",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "deeply_nested_function",
+          "parameters": [
+            {
+              "name": "a",
+              "type": "Any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "b",
+              "type": "Any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "c",
+              "type": "Any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "d",
+              "type": "Any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "Any",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "risky_operation",
+          "parameters": [],
+          "return_type": "Any",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        }
+      ],
+      "classes": [
+        {
+          "name": "User",
+          "methods": [
+            {
+              "name": "duplicate_validation",
+              "parameters": [
+                {
+                  "name": "data",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "Any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "another_validation",
+              "parameters": [
+                {
+                  "name": "items",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "Any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "calculate_discount",
+              "parameters": [
+                {
+                  "name": "price",
+                  "type": "float",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "float",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "deeply_nested_function",
+              "parameters": [
+                {
+                  "name": "a",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "b",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "c",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "d",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "Any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "risky_operation",
+              "parameters": [],
+              "return_type": "Any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            }
+          ],
+          "properties": [],
+          "inherits_from": null,
+          "interfaces": [],
+          "description": ""
+        },
+        {
+          "name": "UserManager",
+          "methods": [
+            {
+              "name": "duplicate_validation",
+              "parameters": [
+                {
+                  "name": "data",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "Any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "another_validation",
+              "parameters": [
+                {
+                  "name": "items",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "Any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "calculate_discount",
+              "parameters": [
+                {
+                  "name": "price",
+                  "type": "float",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "float",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "deeply_nested_function",
+              "parameters": [
+                {
+                  "name": "a",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "b",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "c",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "d",
+                  "type": "Any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "Any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "risky_operation",
+              "parameters": [],
+              "return_type": "Any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            }
+          ],
+          "properties": [],
+          "inherits_from": null,
+          "interfaces": [],
+          "description": ""
+        }
+      ],
+      "metrics": {
+        "lines_of_code": 94,
+        "lines_of_comment": 80,
+        "cyclomatic_complexity": 24,
+        "cognitive_complexity": 28,
+        "maintainability_index": 42.6,
+        "halstead_volume": 3.424,
+        "functions_count": 5,
+        "classes_count": 2,
+        "imports_count": 4
+      },
+      "smells": [
+        {
+          "name": "Deep Nesting",
+          "severity": "Severity.MEDIUM",
+          "line_number": 60,
+          "column": 0,
+          "description": "Code has 6 levels of nesting, making it hard to read",
+          "suggestion": "Extract nested blocks into separate functions or use early returns",
+          "code_snippet": "Nested block"
+        },
+        {
+          "name": "Catch-All Exception Handler",
+          "severity": "Severity.HIGH",
+          "line_number": 1,
+          "column": 0,
+          "description": "Bare except clause catches all exceptions, including system exits",
+          "suggestion": "Catch specific exceptions: 'except ValueError:' or 'except (ValueError, TypeError):'",
+          "code_snippet": "except:"
+        },
+        {
+          "name": "Silent Exception",
+          "severity": "Severity.HIGH",
+          "line_number": 1,
+          "column": 0,
+          "description": "Exception is silently ignored with 'pass'",
+          "suggestion": "Log the exception or handle it explicitly",
+          "code_snippet": "except: pass"
+        },
+        {
+          "name": "Unused Import",
+          "severity": "Severity.LOW",
+          "line_number": 1,
+          "column": 0,
+          "description": "Import 'sys' doesn't appear to be used",
+          "suggestion": "Remove unused imports to reduce complexity",
+          "code_snippet": "import sys"
+        },
+        {
+          "name": "Unused Import",
+          "severity": "Severity.LOW",
+          "line_number": 1,
+          "column": 0,
+          "description": "Import 'os' doesn't appear to be used",
+          "suggestion": "Remove unused imports to reduce complexity",
+          "code_snippet": "import os"
+        }
+      ]
+    },
+    {
+      "file_path": "examples/sample.ts",
+      "language": "typescript",
+      "functions": [
+        {
+          "name": "url",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "response",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "processData",
+          "parameters": [
+            {
+              "name": "data",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "any",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "validateData",
+          "parameters": [
+            {
+              "name": "x",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "boolean",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "transformData",
+          "parameters": [
+            {
+              "name": "obj",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "any",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "result",
+          "parameters": [],
+          "return_type": "any",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "key",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "fetchUserData",
+          "parameters": [
+            {
+              "name": "userId",
+              "type": "string",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "includeProfile",
+              "type": "boolean",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "includeSettings",
+              "type": "boolean",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "includePosts",
+              "type": "boolean",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "includeFollowers",
+              "type": "boolean",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "includeFollowing",
+              "type": "boolean",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "format",
+              "type": "string",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "Promise<UserData>",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "fetch",
+          "parameters": [
+            {
+              "name": "url",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "loadUserWithCallback",
+          "parameters": [
+            {
+              "name": "userId",
+              "type": "string",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "callback",
+              "type": "Function",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "err",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "callback",
+          "parameters": [
+            {
+              "name": "err",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "err2",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "callback",
+          "parameters": [
+            {
+              "name": "err2",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "callback",
+          "parameters": [
+            {
+              "name": "null",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "{ user",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "perms",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "settings }",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "fetchData",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "string",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "callback",
+              "type": "Function",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "fetchPermissions",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "string",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "callback",
+              "type": "Function",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "fetchSettings",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "string",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "callback",
+              "type": "Function",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "validateUserAccess",
+          "parameters": [
+            {
+              "name": "user",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "boolean",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "user !== null && user !== undefined",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "user.isActive === true",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "user.role === \"admin\" || user.role === \"moderator\"",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "user.permissions && user.permissions.length > 0",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "user.permissions.includes(\"write\"",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "user.lastLoginDate",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "calculateDelay",
+          "parameters": [
+            {
+              "name": "retryCount",
+              "type": "number",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "number",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "retryCount === 0",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "retryCount === 1",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "retryCount === 2",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "retryCount === 3",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "retryCount === 4",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "handleError1",
+          "parameters": [
+            {
+              "name": "error",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "error === null",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "error === undefined",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "handleError2",
+          "parameters": [
+            {
+              "name": "error",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "error === null",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "error === undefined",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "processData",
+          "parameters": [
+            {
+              "name": "data",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "any",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "validateData",
+          "parameters": [
+            {
+              "name": "x",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "boolean",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "transformData",
+          "parameters": [
+            {
+              "name": "obj",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "any",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "for",
+          "parameters": [
+            {
+              "name": "const key in obj",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "obj.hasOwnProperty(key",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        }
+      ],
+      "classes": [
+        {
+          "name": "APIService",
+          "methods": [
+            {
+              "name": "url",
+              "parameters": [],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "response",
+              "parameters": [],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "processData",
+              "parameters": [
+                {
+                  "name": "data",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "validateData",
+              "parameters": [
+                {
+                  "name": "x",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "boolean",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "transformData",
+              "parameters": [
+                {
+                  "name": "obj",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "result",
+              "parameters": [],
+              "return_type": "any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "key",
+              "parameters": [],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "fetchUserData",
+              "parameters": [
+                {
+                  "name": "userId",
+                  "type": "string",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "includeProfile",
+                  "type": "boolean",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "includeSettings",
+                  "type": "boolean",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "includePosts",
+                  "type": "boolean",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "includeFollowers",
+                  "type": "boolean",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "includeFollowing",
+                  "type": "boolean",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "format",
+                  "type": "string",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "Promise<UserData>",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "fetch",
+              "parameters": [
+                {
+                  "name": "url",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "loadUserWithCallback",
+              "parameters": [
+                {
+                  "name": "userId",
+                  "type": "string",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "callback",
+                  "type": "Function",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "err",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "callback",
+              "parameters": [
+                {
+                  "name": "err",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "err2",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "callback",
+              "parameters": [
+                {
+                  "name": "err2",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "callback",
+              "parameters": [
+                {
+                  "name": "null",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "{ user",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "perms",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "settings }",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "fetchData",
+              "parameters": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "callback",
+                  "type": "Function",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "fetchPermissions",
+              "parameters": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "callback",
+                  "type": "Function",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "fetchSettings",
+              "parameters": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "description": "",
+                  "default_value": null
+                },
+                {
+                  "name": "callback",
+                  "type": "Function",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "validateUserAccess",
+              "parameters": [
+                {
+                  "name": "user",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "boolean",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "user !== null && user !== undefined",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "user.isActive === true",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "user.role === \"admin\" || user.role === \"moderator\"",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "user.permissions && user.permissions.length > 0",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "user.permissions.includes(\"write\"",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "user.lastLoginDate",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "calculateDelay",
+              "parameters": [
+                {
+                  "name": "retryCount",
+                  "type": "number",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "number",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "retryCount === 0",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "retryCount === 1",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "retryCount === 2",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "retryCount === 3",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "retryCount === 4",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "handleError1",
+              "parameters": [
+                {
+                  "name": "error",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "error === null",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "error === undefined",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "handleError2",
+              "parameters": [
+                {
+                  "name": "error",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "error === null",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "error === undefined",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "processData",
+              "parameters": [
+                {
+                  "name": "data",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "validateData",
+              "parameters": [
+                {
+                  "name": "x",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "boolean",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "transformData",
+              "parameters": [
+                {
+                  "name": "obj",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "any",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "for",
+              "parameters": [
+                {
+                  "name": "const key in obj",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            },
+            {
+              "name": "if",
+              "parameters": [
+                {
+                  "name": "obj.hasOwnProperty(key",
+                  "type": "any",
+                  "description": "",
+                  "default_value": null
+                }
+              ],
+              "return_type": "void",
+              "description": "",
+              "decorators": [],
+              "is_async": false,
+              "is_static": false
+            }
+          ],
+          "properties": [],
+          "inherits_from": null,
+          "interfaces": [],
+          "description": ""
+        }
+      ],
+      "metrics": {
+        "lines_of_code": 136,
+        "lines_of_comment": 3,
+        "cyclomatic_complexity": 27,
+        "cognitive_complexity": 32,
+        "maintainability_index": 32.4,
+        "halstead_volume": 3.353,
+        "functions_count": 42,
+        "classes_count": 1,
+        "imports_count": 0
+      },
+      "smells": [
+        {
+          "name": "Large Class",
+          "severity": "Severity.HIGH",
+          "line_number": 1,
+          "column": 0,
+          "description": "Class 'APIService' has too many methods (42)",
+          "suggestion": "Consider splitting the class into smaller, focused classes using the Single Responsibility Principle",
+          "code_snippet": "APIService"
+        },
+        {
+          "name": "Too Many Parameters",
+          "severity": "Severity.MEDIUM",
+          "line_number": 1,
+          "column": 0,
+          "description": "Function 'fetchUserData' has 7 parameters",
+          "suggestion": "Group related parameters into a configuration object or use the Builder pattern",
+          "code_snippet": "def fetchUserData(userId, includeProfile, includeSettings, includePosts, includeFollowers, includeFollowing, format)"
+        },
+        {
+          "name": "Multiple Responsibilities",
+          "severity": "Severity.MEDIUM",
+          "line_number": 1,
+          "column": 0,
+          "description": "Class 'APIService' appears to handle multiple responsibilities",
+          "suggestion": "Follow the Single Responsibility Principle and split into focused classes",
+          "code_snippet": "APIService"
+        }
+      ]
+    }
+  ],
+  "total_metrics": {
+    "lines_of_code": 230,
+    "lines_of_comment": 83,
+    "cyclomatic_complexity": 25,
+    "cognitive_complexity": 30,
+    "maintainability_index": 37.5,
+    "halstead_volume": 6.777,
+    "functions_count": 47,
+    "classes_count": 3,
+    "imports_count": 4
+  },
+  "architecture": {
+    "modules": 2,
+    "classes": 3,
+    "functions": 47,
+    "dependencies": 4
+  },
+  "global_smells": [
+    {
+      "name": "Deep Nesting",
+      "severity": "medium",
+      "line_number": 60,
+      "column": 0,
+      "description": "Code has 6 levels of nesting, making it hard to read",
+      "suggestion": "Extract nested blocks into separate functions or use early returns",
+      "code_snippet": "Nested block"
+    },
+    {
+      "name": "Catch-All Exception Handler",
+      "severity": "high",
+      "line_number": 1,
+      "column": 0,
+      "description": "Bare except clause catches all exceptions, including system exits",
+      "suggestion": "Catch specific exceptions: 'except ValueError:' or 'except (ValueError, TypeError):'",
+      "code_snippet": "except:"
+    },
+    {
+      "name": "Silent Exception",
+      "severity": "high",
+      "line_number": 1,
+      "column": 0,
+      "description": "Exception is silently ignored with 'pass'",
+      "suggestion": "Log the exception or handle it explicitly",
+      "code_snippet": "except: pass"
+    },
+    {
+      "name": "Unused Import",
+      "severity": "low",
+      "line_number": 1,
+      "column": 0,
+      "description": "Import 'sys' doesn't appear to be used",
+      "suggestion": "Remove unused imports to reduce complexity",
+      "code_snippet": "import sys"
+    },
+    {
+      "name": "Unused Import",
+      "severity": "low",
+      "line_number": 1,
+      "column": 0,
+      "description": "Import 'os' doesn't appear to be used",
+      "suggestion": "Remove unused imports to reduce complexity",
+      "code_snippet": "import os"
+    },
+    {
+      "name": "Large Class",
+      "severity": "high",
+      "line_number": 1,
+      "column": 0,
+      "description": "Class 'APIService' has too many methods (42)",
+      "suggestion": "Consider splitting the class into smaller, focused classes using the Single Responsibility Principle",
+      "code_snippet": "APIService"
+    },
+    {
+      "name": "Too Many Parameters",
+      "severity": "medium",
+      "line_number": 1,
+      "column": 0,
+      "description": "Function 'fetchUserData' has 7 parameters",
+      "suggestion": "Group related parameters into a configuration object or use the Builder pattern",
+      "code_snippet": "def fetchUserData(userId, includeProfile, includeSettings, includePosts, includeFollowers, includeFollowing, format)"
+    },
+    {
+      "name": "Multiple Responsibilities",
+      "severity": "medium",
+      "line_number": 1,
+      "column": 0,
+      "description": "Class 'APIService' appears to handle multiple responsibilities",
+      "suggestion": "Follow the Single Responsibility Principle and split into focused classes",
+      "code_snippet": "APIService"
+    }
+  ],
+  "global_suggestions": [
+    {
+      "title": "Extract Method",
+      "description": "The function 'duplicate_validation' is doing too much",
+      "severity": "medium",
+      "current_code": "def duplicate_validation(data):\n    # 50+ lines of code",
+      "refactored_code": "def duplicate_validation(data):\n    result = self._step_one()\n    return self._step_two(result)\n\ndef _step_one(self):\n    # First part of logic\n    pass\n\ndef _step_two(self, result):\n    # Second part of logic\n    pass",
+      "explanation": "Breaking a long method into smaller, focused methods improves readability and testability",
+      "benefits": [
+        "Easier to understand and maintain",
+        "Each function has a single responsibility",
+        "Functions become reusable",
+        "Easier to write unit tests"
+      ],
+      "location": "duplicate_validation"
+    },
+    {
+      "title": "Simplify Conditional Logic",
+      "description": "Complex nested conditionals reduce readability",
+      "severity": "medium",
+      "current_code": "if user is not None:\n    if user.is_active:\n        if user.role == 'admin':\n            if user.permissions.has_write:\n                perform_action()",
+      "refactored_code": "if is_authorized_user(user):\n    perform_action()\n\ndef is_authorized_user(user):\n    return (user and user.is_active and \n            user.role == 'admin' and \n            user.permissions.has_write)",
+      "explanation": "Extract complex conditionals into guard clauses or boolean methods",
+      "benefits": [
+        "Improved readability",
+        "Easier to test",
+        "Reusable validation logic",
+        "Reduced cyclomatic complexity"
+      ],
+      "location": "conditional logic"
+    },
+    {
+      "title": "Replace Magic Numbers with Constants",
+      "description": "Magic numbers make code harder to maintain",
+      "severity": "low",
+      "current_code": "def calculate_discount(amount):\n    if amount > 100:\n        return amount * 0.9\n    elif amount > 50:\n        return amount * 0.95\n    return amount",
+      "refactored_code": "# At module level\nMIN_DISCOUNT_THRESHOLD = 100\nDISCOUNT_RATE_HIGH = 0.9\nMIN_THRESHOLD = 50\nDISCOUNT_RATE_LOW = 0.95\n\ndef calculate_discount(amount):\n    if amount > MIN_DISCOUNT_THRESHOLD:\n        return amount * DISCOUNT_RATE_HIGH\n    elif amount > MIN_THRESHOLD:\n        return amount * DISCOUNT_RATE_LOW\n    return amount",
+      "explanation": "Named constants make the meaning of values explicit",
+      "benefits": [
+        "Code is self-documenting",
+        "Easier to change values later",
+        "Reduces cognitive load",
+        "Prevents inconsistencies"
+      ],
+      "location": "various"
+    },
+    {
+      "title": "Extract Method",
+      "description": "The function 'url' is doing too much",
+      "severity": "medium",
+      "current_code": "def url():\n    # 50+ lines of code",
+      "refactored_code": "def url():\n    result = self._step_one()\n    return self._step_two(result)\n\ndef _step_one(self):\n    # First part of logic\n    pass\n\ndef _step_two(self, result):\n    # Second part of logic\n    pass",
+      "explanation": "Breaking a long method into smaller, focused methods improves readability and testability",
+      "benefits": [
+        "Easier to understand and maintain",
+        "Each function has a single responsibility",
+        "Functions become reusable",
+        "Easier to write unit tests"
+      ],
+      "location": "url"
+    },
+    {
+      "title": "Extract Class",
+      "description": "Class 'APIService' has too many responsibilities",
+      "severity": "high",
+      "current_code": "class APIService:\n    def __init__(self): pass\n    # 42 methods",
+      "refactored_code": "class APIService:\n    def __init__(self):\n        self.processor = DataProcessor()\n        self.validator = DataValidator()\n    \n    def process_user_data(self):\n        # Delegate to specialized classes\n        if self.validator.is_valid():\n            return self.processor.transform()\n\nclass DataProcessor:\n    def transform(self): pass\n\nclass DataValidator:\n    def is_valid(self): pass",
+      "explanation": "Large classes often violate the Single Responsibility Principle",
+      "benefits": [
+        "Better separation of concerns",
+        "Classes are easier to test and maintain",
+        "Promotes code reusability",
+        "Improves overall design"
+      ],
+      "location": "APIService"
+    },
+    {
+      "title": "Rename for Clarity",
+      "description": "Function name 'result' doesn't clearly indicate its purpose",
+      "severity": "low",
+      "current_code": "def result(): pass",
+      "refactored_code": "def process_user_data(): pass",
+      "explanation": "Good naming makes code self-documenting and easier to understand",
+      "benefits": [
+        "Improved code readability",
+        "Less need for comments",
+        "Better developer experience for team members"
+      ],
+      "location": "result"
+    },
+    {
+      "title": "Simplify Conditional Logic",
+      "description": "Complex nested conditionals reduce readability",
+      "severity": "medium",
+      "current_code": "if user is not None:\n    if user.is_active:\n        if user.role == 'admin':\n            if user.permissions.has_write:\n                perform_action()",
+      "refactored_code": "if is_authorized_user(user):\n    perform_action()\n\ndef is_authorized_user(user):\n    return (user and user.is_active and \n            user.role == 'admin' and \n            user.permissions.has_write)",
+      "explanation": "Extract complex conditionals into guard clauses or boolean methods",
+      "benefits": [
+        "Improved readability",
+        "Easier to test",
+        "Reusable validation logic",
+        "Reduced cyclomatic complexity"
+      ],
+      "location": "conditional logic"
+    },
+    {
+      "title": "Replace Magic Numbers with Constants",
+      "description": "Magic numbers make code harder to maintain",
+      "severity": "low",
+      "current_code": "def calculate_discount(amount):\n    if amount > 100:\n        return amount * 0.9\n    elif amount > 50:\n        return amount * 0.95\n    return amount",
+      "refactored_code": "# At module level\nMIN_DISCOUNT_THRESHOLD = 100\nDISCOUNT_RATE_HIGH = 0.9\nMIN_THRESHOLD = 50\nDISCOUNT_RATE_LOW = 0.95\n\ndef calculate_discount(amount):\n    if amount > MIN_DISCOUNT_THRESHOLD:\n        return amount * DISCOUNT_RATE_HIGH\n    elif amount > MIN_THRESHOLD:\n        return amount * DISCOUNT_RATE_LOW\n    return amount",
+      "explanation": "Named constants make the meaning of values explicit",
+      "benefits": [
+        "Code is self-documenting",
+        "Easier to change values later",
+        "Reduces cognitive load",
+        "Prevents inconsistencies"
+      ],
+      "location": "various"
+    },
+    {
+      "title": "Introduce Parameter Object",
+      "description": "Function 'fetchUserData' has too many parameters",
+      "severity": "medium",
+      "current_code": "def fetchUserData(first_name, last_name, email, phone, address): pass",
+      "refactored_code": "class UserInfo:\n    def __init__(self, first_name, last_name, email, phone, address):\n        self.first_name = first_name\n        self.last_name = last_name\n        self.email = email\n        self.phone = phone\n        self.address = address\n\ndef fetchUserData(user_info: UserInfo): pass",
+      "explanation": "Grouping related parameters improves function signature clarity",
+      "benefits": [
+        "Cleaner function signatures",
+        "Easier to add new parameters",
+        "Type hints become clearer",
+        "Better data encapsulation"
+      ],
+      "location": "fetchUserData"
+    },
+    {
+      "title": "Convert to Async/Await",
+      "description": "Callback-based code is harder to read and maintain",
+      "severity": "medium",
+      "current_code": "function loadUserData(userId, callback) {\n    fetchUser(userId, (err, user) => {\n        if (err) callback(err);\n        else {\n            fetchPermissions(user.id, (err, perms) => {\n                callback(err, { user, perms });\n            });\n        }\n    });\n}",
+      "refactored_code": "async function loadUserData(userId) {\n    try {\n        const user = await fetchUser(userId);\n        const perms = await fetchPermissions(user.id);\n        return { user, perms };\n    } catch (err) {\n        throw err;\n    }\n}",
+      "explanation": "Async/await is cleaner and more readable than nested callbacks",
+      "benefits": [
+        "Linear code flow that's easier to follow",
+        "Better error handling with try/catch",
+        "Reduced callback nesting (pyramid of doom)",
+        "Improved code maintainability"
+      ],
+      "location": "async operations"
+    }
+  ],
+  "statistics": {
+    "total_files": 2,
+    "by_language": {
+      "python": 1,
+      "typescript": 1
+    },
+    "quality_score": 17.5,
+    "complexity_distribution": {
+      "low": 0,
+      "medium": 0,
+      "high": 2
+    }
+  }
+}

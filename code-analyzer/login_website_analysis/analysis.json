@@ -1,0 +1,1547 @@
+{
+  "files": [
+    {
+      "file_path": "/home/user/September-Release-/login-website/backend/server.js",
+      "language": "typescript",
+      "functions": [
+        {
+          "name": "express",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "cors",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "mongoose",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "authRoutes",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "app",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "PORT",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'express'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'cors'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'mongoose'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'./routes/auth'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "express",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        }
+      ],
+      "classes": [],
+      "metrics": {
+        "lines_of_code": 26,
+        "lines_of_comment": 6,
+        "cyclomatic_complexity": 2,
+        "cognitive_complexity": 2,
+        "maintainability_index": 93.4,
+        "halstead_volume": 1.012,
+        "functions_count": 11,
+        "classes_count": 0,
+        "imports_count": 0
+      },
+      "smells": [
+        {
+          "name": "Callback Hell",
+          "severity": "Severity.MEDIUM",
+          "line_number": 1,
+          "column": 0,
+          "description": "Code exhibits callback hell with deeply nested callbacks",
+          "suggestion": "Use async/await or Promise chains instead of deeply nested callbacks",
+          "code_snippet": "((data) => { ... (callback) => { ... }})"
+        }
+      ]
+    },
+    {
+      "file_path": "/home/user/September-Release-/login-website/backend/middleware/auth.js",
+      "language": "typescript",
+      "functions": [
+        {
+          "name": "jwt",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "authenticate",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "token",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "decoded",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'jsonwebtoken'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "!token",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "next",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "catch",
+          "parameters": [
+            {
+              "name": "error",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        }
+      ],
+      "classes": [],
+      "metrics": {
+        "lines_of_code": 15,
+        "lines_of_comment": 0,
+        "cyclomatic_complexity": 4,
+        "cognitive_complexity": 4,
+        "maintainability_index": 90.5,
+        "halstead_volume": 0.474,
+        "functions_count": 8,
+        "classes_count": 0,
+        "imports_count": 0
+      },
+      "smells": []
+    },
+    {
+      "file_path": "/home/user/September-Release-/login-website/backend/models/User.js",
+      "language": "typescript",
+      "functions": [
+        {
+          "name": "mongoose",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "bcryptjs",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "userSchema",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "salt",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "updates",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "maxAttempts",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "lockTime",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'mongoose'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'bcryptjs'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "function",
+          "parameters": [
+            {
+              "name": "next",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "!this.isModified('password'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "next",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "next",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "catch",
+          "parameters": [
+            {
+              "name": "error",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "next",
+          "parameters": [
+            {
+              "name": "error",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "function",
+          "parameters": [
+            {
+              "name": "enteredPassword",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "function",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "function",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "this.lockUntil && this.lockUntil < Date.now(",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "this.loginAttempts + 1 >= maxAttempts && !this.isAccountLocked(",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "function",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        }
+      ],
+      "classes": [],
+      "metrics": {
+        "lines_of_code": 75,
+        "lines_of_comment": 7,
+        "cyclomatic_complexity": 8,
+        "cognitive_complexity": 9,
+        "maintainability_index": 76.5,
+        "halstead_volume": 2.41,
+        "functions_count": 21,
+        "classes_count": 0,
+        "imports_count": 0
+      },
+      "smells": [
+        {
+          "name": "Magic Number",
+          "severity": "Severity.LOW",
+          "line_number": 1,
+          "column": 0,
+          "description": "Magic number '3' appears 3 times",
+          "suggestion": "Replace magic numbers with named constants",
+          "code_snippet": "3"
+        },
+        {
+          "name": "Magic Number",
+          "severity": "Severity.LOW",
+          "line_number": 1,
+          "column": 0,
+          "description": "Magic number '30' appears 3 times",
+          "suggestion": "Replace magic numbers with named constants",
+          "code_snippet": "30"
+        }
+      ]
+    },
+    {
+      "file_path": "/home/user/September-Release-/login-website/backend/routes/auth.js",
+      "language": "typescript",
+      "functions": [
+        {
+          "name": "express",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "rateLimit",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "jwt",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "User",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "router",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "loginLimiter",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "validateRegister",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "validateLogin",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "generateToken",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "errors",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "existingUser",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "user",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "token",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "errors",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "user",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "isPasswordValid",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "token",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "user",
+          "parameters": [],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'express'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'express-validator'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'express-rate-limit'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'jsonwebtoken'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'../models/User'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "require",
+          "parameters": [
+            {
+              "name": "'../middleware/auth'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "rateLimit",
+          "parameters": [
+            {
+              "name": "{\n  windowMs",
+              "type": "15 * 60 * 1000",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "// 15 minutes\n  max",
+              "type": "10",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "// Limit each IP to 10 requests per windowMs\n  message",
+              "type": "'Too many login attempts",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "please try again later'\n}",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "body",
+          "parameters": [
+            {
+              "name": "'username'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "body",
+          "parameters": [
+            {
+              "name": "'email'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "body",
+          "parameters": [
+            {
+              "name": "'password'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "body",
+          "parameters": [
+            {
+              "name": "'email'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "body",
+          "parameters": [
+            {
+              "name": "'password'",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "async",
+          "parameters": [
+            {
+              "name": "req",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "res",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "validationResult",
+          "parameters": [
+            {
+              "name": "req",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "!errors.isEmpty(",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "existingUser",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "User",
+          "parameters": [
+            {
+              "name": "{\n      username",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "email",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "password\n    }",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "generateToken",
+          "parameters": [
+            {
+              "name": "user._id",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "catch",
+          "parameters": [
+            {
+              "name": "error",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "async",
+          "parameters": [
+            {
+              "name": "req",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "res",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "validationResult",
+          "parameters": [
+            {
+              "name": "req",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "!errors.isEmpty(",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "!user",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "user.isAccountLocked(",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "!isPasswordValid",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "generateToken",
+          "parameters": [
+            {
+              "name": "user._id",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "catch",
+          "parameters": [
+            {
+              "name": "error",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "async",
+          "parameters": [
+            {
+              "name": "req",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "res",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "if",
+          "parameters": [
+            {
+              "name": "!user",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "catch",
+          "parameters": [
+            {
+              "name": "error",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "route",
+          "parameters": [
+            {
+              "name": "token invalidation handled on client",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        },
+        {
+          "name": "async",
+          "parameters": [
+            {
+              "name": "req",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            },
+            {
+              "name": "res",
+              "type": "any",
+              "description": "",
+              "default_value": null
+            }
+          ],
+          "return_type": "void",
+          "description": "",
+          "decorators": [],
+          "is_async": false,
+          "is_static": false
+        }
+      ],
+      "classes": [],
+      "metrics": {
+        "lines_of_code": 120,
+        "lines_of_comment": 15,
+        "cyclomatic_complexity": 18,
+        "cognitive_complexity": 21,
+        "maintainability_index": 52.0,
+        "halstead_volume": 4.419,
+        "functions_count": 50,
+        "classes_count": 0,
+        "imports_count": 0
+      },
+      "smells": [
+        {
+          "name": "Duplicate Code",
+          "severity": "Severity.MEDIUM",
+          "line_number": 74,
+          "column": 0,
+          "description": "This code pattern appears multiple times in the file",
+          "suggestion": "Extract the repeated code into a shared function or utility",
+          "code_snippet": "username: user.username,"
+        },
+        {
+          "name": "Magic Number",
+          "severity": "Severity.LOW",
+          "line_number": 1,
+          "column": 0,
+          "description": "Magic number '400' appears 3 times",
+          "suggestion": "Replace magic numbers with named constants",
+          "code_snippet": "400"
+        },
+        {
+          "name": "Magic Number",
+          "severity": "Severity.LOW",
+          "line_number": 1,
+          "column": 0,
+          "description": "Magic number '500' appears 3 times",
+          "suggestion": "Replace magic numbers with named constants",
+          "code_snippet": "500"
+        },
+        {
+          "name": "Magic Number",
+          "severity": "Severity.LOW",
+          "line_number": 1,
+          "column": 0,
+          "description": "Magic number '401' appears 3 times",
+          "suggestion": "Replace magic numbers with named constants",
+          "code_snippet": "401"
+        }
+      ]
+    }
+  ],
+  "total_metrics": {
+    "lines_of_code": 236,
+    "lines_of_comment": 28,
+    "cyclomatic_complexity": 8,
+    "cognitive_complexity": 9,
+    "maintainability_index": 78.1,
+    "halstead_volume": 8.315,
+    "functions_count": 90,
+    "classes_count": 0,
+    "imports_count": 0
+  },
+  "architecture": {
+    "modules": 3,
+    "classes": 0,
+    "functions": 90,
+    "dependencies": 0
+  },
+  "global_smells": [
+    {
+      "name": "Callback Hell",
+      "severity": "medium",
+      "line_number": 1,
+      "column": 0,
+      "description": "Code exhibits callback hell with deeply nested callbacks",
+      "suggestion": "Use async/await or Promise chains instead of deeply nested callbacks",
+      "code_snippet": "((data) => { ... (callback) => { ... }})"
+    },
+    {
+      "name": "Magic Number",
+      "severity": "low",
+      "line_number": 1,
+      "column": 0,
+      "description": "Magic number '3' appears 3 times",
+      "suggestion": "Replace magic numbers with named constants",
+      "code_snippet": "3"
+    },
+    {
+      "name": "Magic Number",
+      "severity": "low",
+      "line_number": 1,
+      "column": 0,
+      "description": "Magic number '30' appears 3 times",
+      "suggestion": "Replace magic numbers with named constants",
+      "code_snippet": "30"
+    },
+    {
+      "name": "Duplicate Code",
+      "severity": "medium",
+      "line_number": 74,
+      "column": 0,
+      "description": "This code pattern appears multiple times in the file",
+      "suggestion": "Extract the repeated code into a shared function or utility",
+      "code_snippet": "username: user.username,"
+    },
+    {
+      "name": "Magic Number",
+      "severity": "low",
+      "line_number": 1,
+      "column": 0,
+      "description": "Magic number '400' appears 3 times",
+      "suggestion": "Replace magic numbers with named constants",
+      "code_snippet": "400"
+    },
+    {
+      "name": "Magic Number",
+      "severity": "low",
+      "line_number": 1,
+      "column": 0,
+      "description": "Magic number '500' appears 3 times",
+      "suggestion": "Replace magic numbers with named constants",
+      "code_snippet": "500"
+    },
+    {
+      "name": "Magic Number",
+      "severity": "low",
+      "line_number": 1,
+      "column": 0,
+      "description": "Magic number '401' appears 3 times",
+      "suggestion": "Replace magic numbers with named constants",
+      "code_snippet": "401"
+    }
+  ],
+  "global_suggestions": [
+    {
+      "title": "Convert to Async/Await",
+      "description": "Callback-based code is harder to read and maintain",
+      "severity": "medium",
+      "current_code": "function loadUserData(userId, callback) {\n    fetchUser(userId, (err, user) => {\n        if (err) callback(err);\n        else {\n            fetchPermissions(user.id, (err, perms) => {\n                callback(err, { user, perms });\n            });\n        }\n    });\n}",
+      "refactored_code": "async function loadUserData(userId) {\n    try {\n        const user = await fetchUser(userId);\n        const perms = await fetchPermissions(user.id);\n        return { user, perms };\n    } catch (err) {\n        throw err;\n    }\n}",
+      "explanation": "Async/await is cleaner and more readable than nested callbacks",
+      "benefits": [
+        "Linear code flow that's easier to follow",
+        "Better error handling with try/catch",
+        "Reduced callback nesting (pyramid of doom)",
+        "Improved code maintainability"
+      ],
+      "location": "async operations"
+    },
+    {
+      "title": "Extract Method",
+      "description": "The function 'mongoose' is doing too much",
+      "severity": "medium",
+      "current_code": "def mongoose():\n    # 50+ lines of code",
+      "refactored_code": "def mongoose():\n    result = self._step_one()\n    return self._step_two(result)\n\ndef _step_one(self):\n    # First part of logic\n    pass\n\ndef _step_two(self, result):\n    # Second part of logic\n    pass",
+      "explanation": "Breaking a long method into smaller, focused methods improves readability and testability",
+      "benefits": [
+        "Easier to understand and maintain",
+        "Each function has a single responsibility",
+        "Functions become reusable",
+        "Easier to write unit tests"
+      ],
+      "location": "mongoose"
+    },
+    {
+      "title": "Replace Magic Numbers with Constants",
+      "description": "Magic numbers make code harder to maintain",
+      "severity": "low",
+      "current_code": "def calculate_discount(amount):\n    if amount > 100:\n        return amount * 0.9\n    elif amount > 50:\n        return amount * 0.95\n    return amount",
+      "refactored_code": "# At module level\nMIN_DISCOUNT_THRESHOLD = 100\nDISCOUNT_RATE_HIGH = 0.9\nMIN_THRESHOLD = 50\nDISCOUNT_RATE_LOW = 0.95\n\ndef calculate_discount(amount):\n    if amount > MIN_DISCOUNT_THRESHOLD:\n        return amount * DISCOUNT_RATE_HIGH\n    elif amount > MIN_THRESHOLD:\n        return amount * DISCOUNT_RATE_LOW\n    return amount",
+      "explanation": "Named constants make the meaning of values explicit",
+      "benefits": [
+        "Code is self-documenting",
+        "Easier to change values later",
+        "Reduces cognitive load",
+        "Prevents inconsistencies"
+      ],
+      "location": "various"
+    },
+    {
+      "title": "Extract Method",
+      "description": "The function 'express' is doing too much",
+      "severity": "medium",
+      "current_code": "def express():\n    # 50+ lines of code",
+      "refactored_code": "def express():\n    result = self._step_one()\n    return self._step_two(result)\n\ndef _step_one(self):\n    # First part of logic\n    pass\n\ndef _step_two(self, result):\n    # Second part of logic\n    pass",
+      "explanation": "Breaking a long method into smaller, focused methods improves readability and testability",
+      "benefits": [
+        "Easier to understand and maintain",
+        "Each function has a single responsibility",
+        "Functions become reusable",
+        "Easier to write unit tests"
+      ],
+      "location": "express"
+    },
+    {
+      "title": "Simplify Conditional Logic",
+      "description": "Complex nested conditionals reduce readability",
+      "severity": "medium",
+      "current_code": "if user is not None:\n    if user.is_active:\n        if user.role == 'admin':\n            if user.permissions.has_write:\n                perform_action()",
+      "refactored_code": "if is_authorized_user(user):\n    perform_action()\n\ndef is_authorized_user(user):\n    return (user and user.is_active and \n            user.role == 'admin' and \n            user.permissions.has_write)",
+      "explanation": "Extract complex conditionals into guard clauses or boolean methods",
+      "benefits": [
+        "Improved readability",
+        "Easier to test",
+        "Reusable validation logic",
+        "Reduced cyclomatic complexity"
+      ],
+      "location": "conditional logic"
+    },
+    {
+      "title": "Replace Magic Numbers with Constants",
+      "description": "Magic numbers make code harder to maintain",
+      "severity": "low",
+      "current_code": "def calculate_discount(amount):\n    if amount > 100:\n        return amount * 0.9\n    elif amount > 50:\n        return amount * 0.95\n    return amount",
+      "refactored_code": "# At module level\nMIN_DISCOUNT_THRESHOLD = 100\nDISCOUNT_RATE_HIGH = 0.9\nMIN_THRESHOLD = 50\nDISCOUNT_RATE_LOW = 0.95\n\ndef calculate_discount(amount):\n    if amount > MIN_DISCOUNT_THRESHOLD:\n        return amount * DISCOUNT_RATE_HIGH\n    elif amount > MIN_THRESHOLD:\n        return amount * DISCOUNT_RATE_LOW\n    return amount",
+      "explanation": "Named constants make the meaning of values explicit",
+      "benefits": [
+        "Code is self-documenting",
+        "Easier to change values later",
+        "Reduces cognitive load",
+        "Prevents inconsistencies"
+      ],
+      "location": "various"
+    },
+    {
+      "title": "Extract Duplicate Code",
+      "description": "Similar code pattern appears multiple times",
+      "severity": "medium",
+      "current_code": "# Line 74\nusername: user.username,\n# ... (repeated 2+ times)\nusername: user.username,",
+      "refactored_code": "def common_operation():\n    # Extracted common logic\n    pass\n\n# Use in multiple places\nresult1 = common_operation()\nresult2 = common_operation()",
+      "explanation": "DRY principle: Don't Repeat Yourself",
+      "benefits": [
+        "Single source of truth",
+        "Easier maintenance",
+        "Reduced code size",
+        "Fewer bugs from inconsistent changes"
+      ],
+      "location": "line 74"
+    }
+  ],
+  "statistics": {
+    "total_files": 4,
+    "by_language": {
+      "typescript": 4
+    },
+    "quality_score": 78.1,
+    "complexity_distribution": {
+      "low": 2,
+      "medium": 1,
+      "high": 1
+    }
+  }
+}
