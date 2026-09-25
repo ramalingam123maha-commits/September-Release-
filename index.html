@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Login</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #0b1220;
+        --card: rgba(255, 255, 255, 0.06);
+        --text: #eaf0ff;
+        --muted: rgba(234, 240, 255, 0.75);
+        --border: rgba(234, 240, 255, 0.16);
+        --accent: #6ea8fe;
+        --accent2: #7ee787;
+        --danger: #ff7b72;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        background: radial-gradient(1200px 600px at 20% 10%, rgba(110, 168, 254, 0.25), transparent 60%),
+          radial-gradient(900px 500px at 80% 30%, rgba(126, 231, 135, 0.22), transparent 55%),
+          radial-gradient(900px 700px at 40% 90%, rgba(255, 123, 114, 0.15), transparent 55%),
+          var(--bg);
+        color: var(--text);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .card {
+        width: min(420px, 100%);
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(12px);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 22px;
+        letter-spacing: 0.2px;
+      }
+
+      p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+
+      label {
+        display: block;
+        font-size: 13px;
+        color: var(--muted);
+        margin: 14px 0 8px;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(11, 18, 32, 0.65);
+        color: var(--text);
+        outline: none;
+      }
+
+      input:focus {
+        border-color: rgba(110, 168, 254, 0.8);
+        box-shadow: 0 0 0 4px rgba(110, 168, 254, 0.18);
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 14px;
+        gap: 12px;
+      }
+
+      .hint {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      button {
+        width: 100%;
+        margin-top: 18px;
+        border: 0;
+        padding: 12px 14px;
+        border-radius: 12px;
+        font-weight: 600;
+        color: #08101f;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        cursor: pointer;
+      }
+
+      button:focus-visible {
+        outline: 3px solid rgba(110, 168, 254, 0.6);
+        outline-offset: 3px;
+      }
+
+      .message {
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(11, 18, 32, 0.45);
+      }
+
+      .message[hidden] {
+        display: none;
+      }
+
+      .message.success {
+        border-color: rgba(126, 231, 135, 0.45);
+      }
+
+      .message.error {
+        border-color: rgba(255, 123, 114, 0.45);
+      }
+
+      .footer {
+        margin-top: 16px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      a {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card" aria-labelledby="title">
+      <h1 id="title">Login</h1>
+      <p>Enter your email and password to sign in.</p>
+
+      <form id="loginForm" novalidate>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="username" required placeholder="you@example.com" />
+
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="current-password"
+          required
+          minlength="6"
+          placeholder="••••••••"
+        />
+
+        <div class="row">
+          <span class="hint">Demo: demo@example.com / Password1!</span>
+          <a class="hint" href="#" id="forgot">Forgot password?</a>
+        </div>
+
+        <button type="submit">Sign in</button>
+
+        <div id="msg" class="message" hidden aria-live="polite"></div>
+      </form>
+
+      <div class="footer">This is a simple static demo (no backend).</div>
+    </main>
+
+    <script>
+      const form = document.getElementById('loginForm');
+      const msg = document.getElementById('msg');
+      const forgot = document.getElementById('forgot');
+
+      const DEMO_EMAIL = 'demo@example.com';
+      const DEMO_PASSWORD = 'Password1!';
+
+      function showMessage(type, text) {
+        msg.hidden = false;
+        msg.classList.remove('success', 'error');
+        msg.classList.add(type);
+        msg.textContent = text;
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const email = String(form.email.value || '').trim();
+        const password = String(form.password.value || '');
+
+        if (!email || !password) {
+          showMessage('error', 'Please enter both email and password.');
+          return;
+        }
+
+        if (email === DEMO_EMAIL && password === DEMO_PASSWORD) {
+          showMessage('success', `Welcome, ${email}! You are signed in.`);
+          form.password.value = '';
+          return;
+        }
+
+        showMessage('error', 'Invalid credentials. Try the demo account shown above.');
+      });
+
+      forgot.addEventListener('click', (e) => {
+        e.preventDefault();
+        showMessage('error', 'Password reset is not available in this static demo.');
+      });
+    </script>
+  </body>
+</html>
