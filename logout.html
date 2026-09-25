@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logging Out...</title>
+  <link rel="stylesheet" href="logout.css">
+</head>
+<body>
+  <main class="logout-container">
+    <div class="logout-card" role="status" aria-live="polite">
+      <div class="spinner" aria-hidden="true"></div>
+
+      <div id="logging-out-view">
+        <h1>Logging you out</h1>
+        <p id="countdown-message">You will be signed out in <span id="countdown">3</span> seconds...</p>
+        <button type="button" id="cancel-btn">Cancel</button>
+      </div>
+
+      <div id="logged-out-view" class="hidden">
+        <svg class="check-icon" viewBox="0 0 52 52" aria-hidden="true">
+          <circle class="check-circle" cx="26" cy="26" r="24" fill="none"/>
+          <path class="check-mark" fill="none" d="M14 27l8 8 16-16"/>
+        </svg>
+        <h1>You've been signed out</h1>
+        <p>Thanks for visiting. See you soon!</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="index.html">Back to Home</a>
+          <a class="btn btn-secondary" href="login.html">Log back in</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="logout.js"></script>
+</body>
+</html>
