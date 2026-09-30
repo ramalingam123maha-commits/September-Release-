@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Aroma — Hotel Food Ordering</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo">🍽️</span>
+      <div>
+        <h1>Grand Aroma</h1>
+        <p>In-Room Dining &amp; Restaurant</p>
+      </div>
+    </div>
+    <button id="cartToggle" class="cart-btn" aria-label="Open cart">
+      🛒 <span id="cartCount" class="cart-count">0</span>
+    </button>
+  </header>
+
+  <nav class="categories" id="categories" aria-label="Menu categories"></nav>
+
+  <main class="layout">
+    <section class="menu" id="menu" aria-live="polite"></section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Your Order</h2>
+      <button id="cartClose" class="icon-btn" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="row">
+        <span>Subtotal</span><span id="subtotal">$0.00</span>
+      </div>
+      <div class="row muted">
+        <span>Service (10%)</span><span id="service">$0.00</span>
+      </div>
+      <div class="row total">
+        <span>Total</span><span id="total">$0.00</span>
+      </div>
+      <label class="room-label">
+        Room Number
+        <input type="text" id="roomNumber" placeholder="e.g. 412" />
+      </label>
+      <button id="placeOrder" class="primary-btn" disabled>Place Order</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Confirmation Toast -->
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
