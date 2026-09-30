@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="login-wrapper">
+    <section class="login-card" aria-labelledby="login-title">
+      <div class="brand">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">ShopHub</span>
+      </div>
+
+      <h1 id="login-title">Welcome back</h1>
+      <p class="subtitle">Sign in to continue to your account</p>
+
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            />
+            <button type="button" class="toggle-pass" id="togglePass" aria-label="Show password">Show</button>
+          </div>
+          <small class="error" id="passwordError"></small>
+        </div>
+
+        <div class="row-between">
+          <label class="checkbox">
+            <input type="checkbox" id="remember" name="remember" />
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-primary">Sign In</button>
+
+        <p class="form-message" id="formMessage" role="status"></p>
+      </form>
+
+      <p class="signup">Don't have an account? <a href="#" class="link">Sign up</a></p>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
