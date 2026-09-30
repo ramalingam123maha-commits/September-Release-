@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase — Modern E-Commerce</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">Shop<span>Ease</span></a>
+
+      <nav class="nav" id="nav">
+        <a href="#home" class="nav__link">Home</a>
+        <a href="#products" class="nav__link">Shop</a>
+        <a href="#categories" class="nav__link">Categories</a>
+        <a href="#features" class="nav__link">Why Us</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="search">
+          <input type="text" id="searchInput" placeholder="Search products..." aria-label="Search products" />
+          <span class="search__icon">🔍</span>
+        </div>
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          🛒
+          <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="hero__badge">New Season Collection</span>
+        <h1 class="hero__title">Discover Products<br />You'll <span>Love</span></h1>
+        <p class="hero__text">Shop the latest trends in electronics, fashion, and home essentials — all with free shipping and easy returns.</p>
+        <div class="hero__actions">
+          <a href="#products" class="btn btn--primary">Shop Now</a>
+          <a href="#categories" class="btn btn--ghost">Browse Categories</a>
+        </div>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="hero__blob"></div>
+        <div class="hero__emoji">🛍️</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <h2 class="section__title">Shop by Category</h2>
+      <div class="categories__grid" id="categoryGrid"></div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="products__head">
+        <h2 class="section__title">Featured Products</h2>
+        <div class="filters" id="filters"></div>
+      </div>
+      <div class="products__grid" id="productGrid"></div>
+      <p class="products__empty" id="emptyState" hidden>No products found. Try a different search.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container features__grid">
+      <div class="feature"><span class="feature__icon">🚚</span><h3>Free Shipping</h3><p>On all orders over $50, delivered fast.</p></div>
+      <div class="feature"><span class="feature__icon">↩️</span><h3>Easy Returns</h3><p>30-day hassle-free return policy.</p></div>
+      <div class="feature"><span class="feature__icon">🔒</span><h3>Secure Payment</h3><p>Your data is protected end-to-end.</p></div>
+      <div class="feature"><span class="feature__icon">💬</span><h3>24/7 Support</h3><p>We're here whenever you need us.</p></div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container newsletter__inner">
+      <h2>Get 10% off your first order</h2>
+      <p>Subscribe to our newsletter for exclusive deals and updates.</p>
+      <form class="newsletter__form" id="newsletterForm">
+        <input type="email" placeholder="Enter your email" required aria-label="Email" />
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </form>
+      <p class="newsletter__msg" id="newsletterMsg" hidden>🎉 Thanks for subscribing!</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#" class="logo logo--light">Shop<span>Ease</span></a>
+        <p class="footer__text">Your one-stop shop for quality products at great prices.</p>
+      </div>
+      <div><h4>Shop</h4><a href="#products">All Products</a><a href="#categories">Categories</a><a href="#products">Deals</a></div>
+      <div><h4>Company</h4><a href="#features">About Us</a><a href="#">Careers</a><a href="#">Contact</a></div>
+      <div><h4>Support</h4><a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a></div>
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; 2024 ShopEase. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-drawer__head">
+      <h3>Your Cart</h3>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-drawer__body" id="cartItems"></div>
+    <div class="cart-drawer__foot">
+      <div class="cart-drawer__total">
+        <span>Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="btn btn--primary btn--block" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
