@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">📚 Student Dashboard</div>
+        <nav>
+            <button class="nav-btn active" data-section="dashboard">Dashboard</button>
+            <button class="nav-btn" data-section="students">Students</button>
+            <button class="nav-btn" data-section="enrollments">Enrollments</button>
+            <button class="nav-btn" data-section="progress">Academic Progress</button>
+            <button class="nav-btn" data-section="reports">Reports</button>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <h1>Dashboard</h1>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Students</h3>
+                    <p class="stat-number" id="totalStudents">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Enrollments</h3>
+                    <p class="stat-number" id="activeEnrollments">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Performance</h3>
+                    <p class="stat-number" id="avgPerformance">0%</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Courses Offered</h3>
+                    <p class="stat-number" id="coursesOffered">0</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <h2>Grade Distribution</h2>
+                <div id="gradeChart" class="grade-chart"></div>
+            </div>
+        </section>
+
+        <!-- Students Section -->
+        <section id="students" class="section">
+            <h1>Student Management</h1>
+            <button class="btn-primary" onclick="openStudentModal()">+ Register New Student</button>
+            <div class="search-bar">
+                <input type="text" id="studentSearch" placeholder="Search by name, email, or roll number...">
+            </div>
+            <div id="studentsList" class="students-list"></div>
+        </section>
+
+        <!-- Enrollments Section -->
+        <section id="enrollments" class="section">
+            <h1>Manage Enrollments</h1>
+            <button class="btn-primary" onclick="openEnrollmentModal()">+ New Enrollment</button>
+            <div class="search-bar">
+                <input type="text" id="enrollmentSearch" placeholder="Search enrollments...">
+            </div>
+            <div id="enrollmentsList" class="enrollments-list"></div>
+        </section>
+
+        <!-- Academic Progress Section -->
+        <section id="progress" class="section">
+            <h1>Academic Progress Tracking</h1>
+            <button class="btn-primary" onclick="openProgressModal()">+ Record Progress</button>
+            <div class="search-bar">
+                <input type="text" id="progressSearch" placeholder="Search by student or course...">
+            </div>
+            <div id="progressList" class="progress-list"></div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports" class="section">
+            <h1>Performance Reports</h1>
+            <button class="btn-primary" onclick="openReportModal()">+ Generate Report</button>
+            <div id="reportsList" class="reports-list"></div>
+        </section>
+    </div>
+
+    <!-- Student Modal -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeStudentModal()">&times;</span>
+            <h2>Register Student</h2>
+            <form id="studentForm">
+                <input type="text" placeholder="Full Name" id="studentName" required>
+                <input type="email" placeholder="Email" id="studentEmail" required>
+                <input type="text" placeholder="Roll Number" id="studentRollNumber" required>
+                <input type="tel" placeholder="Phone" id="studentPhone">
+                <input type="date" placeholder="Date of Birth" id="studentDOB">
+                <textarea placeholder="Address" id="studentAddress"></textarea>
+                <button type="submit" class="btn-primary">Register Student</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enrollment Modal -->
+    <div id="enrollmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEnrollmentModal()">&times;</span>
+            <h2>New Enrollment</h2>
+            <form id="enrollmentForm">
+                <select id="enrollmentStudentId" required>
+                    <option value="">Select Student</option>
+                </select>
+                <input type="text" placeholder="Course Code" id="courseCode" required>
+                <input type="text" placeholder="Course Name" id="courseName" required>
+                <input type="text" placeholder="Instructor" id="instructor">
+                <input type="text" placeholder="Semester (e.g., Fall 2024)" id="semester">
+                <input type="number" placeholder="Credits" id="credits" min="1" max="6">
+                <button type="submit" class="btn-primary">Enroll Student</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Progress Modal -->
+    <div id="progressModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProgressModal()">&times;</span>
+            <h2>Record Academic Progress</h2>
+            <form id="progressForm">
+                <select id="progressStudentId" required>
+                    <option value="">Select Student</option>
+                </select>
+                <select id="progressEnrollmentId" required>
+                    <option value="">Select Course</option>
+                </select>
+                <input type="text" placeholder="Semester" id="progressSemester" required>
+                <input type="number" placeholder="GPA (0-4)" id="gpa" min="0" max="4" step="0.1">
+                <input type="number" placeholder="Attendance %" id="attendance" min="0" max="100">
+                <input type="number" placeholder="Midterm Score (0-100)" id="midterm" min="0" max="100">
+                <input type="number" placeholder="Final Score (0-100)" id="final" min="0" max="100">
+                <input type="number" placeholder="Project Score (0-100)" id="project" min="0" max="100">
+                <button type="submit" class="btn-primary">Record Progress</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeReportModal()">&times;</span>
+            <h2>Generate Performance Report</h2>
+            <form id="reportForm">
+                <select id="reportStudentId" required>
+                    <option value="">Select Student</option>
+                </select>
+                <input type="text" placeholder="Academic Year (e.g., 2024-2025)" id="academicYear" required>
+                <input type="text" placeholder="Semester (e.g., Fall)" id="reportSemester" required>
+                <button type="submit" class="btn-primary">Generate Report</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
