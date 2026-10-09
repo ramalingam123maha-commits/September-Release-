@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 Student Management Dashboard</h1>
+      <p>Manage students, track progress, and generate reports</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="students">Students</button>
+      <button class="tab-btn" data-tab="enrollments">Enrollments</button>
+      <button class="tab-btn" data-tab="courses">Courses</button>
+      <button class="tab-btn" data-tab="grades">Grades</button>
+      <button class="tab-btn" data-tab="reports">Reports</button>
+    </nav>
+
+    <!-- Students Tab -->
+    <section id="students" class="tab-content active">
+      <h2>Student Management</h2>
+      <form id="studentForm" class="form">
+        <div class="form-group">
+          <input type="text" id="studentName" placeholder="Student Name" required>
+          <input type="email" id="studentEmail" placeholder="Email" required>
+          <input type="tel" id="studentPhone" placeholder="Phone" required>
+          <input type="date" id="enrollmentDate">
+          <input type="text" id="major" placeholder="Major" required>
+          <button type="submit" class="btn btn-primary">Register Student</button>
+        </div>
+      </form>
+
+      <div id="studentsList" class="list-container"></div>
+    </section>
+
+    <!-- Enrollments Tab -->
+    <section id="enrollments" class="tab-content">
+      <h2>Manage Enrollments</h2>
+      <form id="enrollmentForm" class="form">
+        <div class="form-group">
+          <select id="enrollStudentId" required>
+            <option value="">Select Student</option>
+          </select>
+          <select id="enrollCourseId" required>
+            <option value="">Select Course</option>
+          </select>
+          <input type="date" id="enrollmentEnrollDate">
+          <select id="enrollmentStatus">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+            <option value="completed">Completed</option>
+          </select>
+          <button type="submit" class="btn btn-primary">Enroll Student</button>
+        </div>
+      </form>
+
+      <div id="enrollmentsList" class="list-container"></div>
+    </section>
+
+    <!-- Courses Tab -->
+    <section id="courses" class="tab-content">
+      <h2>Course Management</h2>
+      <form id="courseForm" class="form">
+        <div class="form-group">
+          <input type="text" id="courseName" placeholder="Course Name" required>
+          <input type="text" id="courseCode" placeholder="Course Code" required>
+          <input type="number" id="courseCredits" placeholder="Credits" value="3" min="1" max="6">
+          <input type="text" id="courseInstructor" placeholder="Instructor Name">
+          <button type="submit" class="btn btn-primary">Add Course</button>
+        </div>
+      </form>
+
+      <div id="coursesList" class="list-container"></div>
+    </section>
+
+    <!-- Grades Tab -->
+    <section id="grades" class="tab-content">
+      <h2>Student Grades</h2>
+      <form id="gradeForm" class="form">
+        <div class="form-group">
+          <select id="gradeStudentId" required>
+            <option value="">Select Student</option>
+          </select>
+          <select id="gradeCourseId" required>
+            <option value="">Select Course</option>
+          </select>
+          <input type="number" id="gradeValue" placeholder="Grade (0-100)" min="0" max="100" step="0.1" required>
+          <input type="text" id="semester" placeholder="Semester (e.g., Fall 2024)" required>
+          <button type="submit" class="btn btn-primary">Record Grade</button>
+        </div>
+      </form>
+
+      <div id="gradesList" class="list-container"></div>
+    </section>
+
+    <!-- Reports Tab -->
+    <section id="reports" class="tab-content">
+      <h2>Performance Reports</h2>
+      <button id="generateAllReports" class="btn btn-secondary">Generate All Reports</button>
+      <div id="reportsList" class="list-container"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
