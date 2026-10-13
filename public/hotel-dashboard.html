@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Management System</title>
+  <link rel="stylesheet" href="hotel-style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🏨 Hotel Management System</h1>
+      <div class="connection-status" id="connectionStatus">Connecting...</div>
+      <nav class="nav">
+        <button class="nav-btn active" onclick="showTab('rooms')">Rooms</button>
+        <button class="nav-btn" onclick="showTab('guests')">Guests</button>
+        <button class="nav-btn" onclick="showTab('reservations')">Reservations</button>
+        <button class="nav-btn" onclick="showTab('checkins')">Check-in/out</button>
+        <button class="nav-btn" onclick="showTab('billing')">Billing</button>
+        <button class="nav-btn" onclick="showTab('staff')">Staff</button>
+        <button class="nav-btn" onclick="showTab('services')">Services</button>
+        <button class="nav-btn" onclick="showTab('reports')">Reports</button>
+      </nav>
+    </header>
+
+    <!-- Rooms Tab -->
+    <section id="rooms-tab" class="tab-content active">
+      <h2>Room Management</h2>
+      <div class="form-section">
+        <h3>Add New Room</h3>
+        <form id="roomForm" class="form-grid">
+          <input type="text" id="roomNumber" placeholder="Room Number" required>
+          <select id="roomType" required>
+            <option value="">Select Type</option>
+            <option value="single">Single</option>
+            <option value="double">Double</option>
+            <option value="suite">Suite</option>
+            <option value="deluxe">Deluxe</option>
+          </select>
+          <input type="number" id="capacity" placeholder="Capacity" min="1" required>
+          <input type="number" id="pricePerNight" placeholder="Price Per Night" step="0.01" required>
+          <input type="number" id="floor" placeholder="Floor Number">
+          <input type="text" id="amenities" placeholder="Amenities (comma separated)">
+          <button type="submit" class="btn-primary">Add Room</button>
+        </form>
+      </div>
+
+      <div class="rooms-list">
+        <h3>Room Inventory</h3>
+        <div id="roomsList" class="list-container">
+          <p>Loading rooms...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guests Tab -->
+    <section id="guests-tab" class="tab-content">
+      <h2>Guest Management</h2>
+      <div class="form-section">
+        <h3>Register Guest</h3>
+        <form id="guestForm" class="form-grid">
+          <input type="text" id="guestName" placeholder="Full Name" required>
+          <input type="email" id="guestEmail" placeholder="Email">
+          <input type="tel" id="guestPhone" placeholder="Phone" required>
+          <input type="text" id="guestAddress" placeholder="Address">
+          <input type="text" id="guestCity" placeholder="City">
+          <input type="text" id="guestCountry" placeholder="Country">
+          <input type="text" id="guestIdNumber" placeholder="ID Number">
+          <button type="submit" class="btn-primary">Register Guest</button>
+        </form>
+      </div>
+
+      <div class="guests-list">
+        <h3>Registered Guests</h3>
+        <div id="guestsList" class="list-container">
+          <p>Loading guests...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservations Tab -->
+    <section id="reservations-tab" class="tab-content">
+      <h2>Reservations</h2>
+      <div class="form-section">
+        <h3>Create Reservation</h3>
+        <form id="reservationForm" class="form-grid">
+          <select id="resGuest" required>
+            <option value="">Select Guest</option>
+          </select>
+          <select id="resRoom" required>
+            <option value="">Select Room</option>
+          </select>
+          <input type="date" id="checkInDate" required>
+          <input type="date" id="checkOutDate" required>
+          <textarea id="specialRequests" placeholder="Special Requests" rows="2"></textarea>
+          <button type="submit" class="btn-primary">Create Reservation</button>
+        </form>
+      </div>
+
+      <div class="reservations-list">
+        <h3>Active Reservations</h3>
+        <div id="reservationsList" class="list-container">
+          <p>Loading reservations...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Check-in/out Tab -->
+    <section id="checkins-tab" class="tab-content">
+      <h2>Guest Check-in & Check-out</h2>
+      
+      <div class="form-section">
+        <h3>Guest Check-in</h3>
+        <form id="checkInForm" class="form-grid">
+          <select id="ciReservation" required>
+            <option value="">Select Reservation</option>
+          </select>
+          <textarea id="ciNotes" placeholder="Check-in Notes" rows="2"></textarea>
+          <button type="submit" class="btn-primary">Check In</button>
+        </form>
+      </div>
+
+      <div class="form-section">
+        <h3>Guest Check-out</h3>
+        <form id="checkOutForm" class="form-grid">
+          <select id="coCheckIn" required>
+            <option value="">Select Check-in Record</option>
+          </select>
+          <select id="roomCondition" required>
+            <option value="">Select Room Condition</option>
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="poor">Poor</option>
+          </select>
+          <textarea id="damageNotes" placeholder="Damage Notes (if any)" rows="2"></textarea>
+          <button type="submit" class="btn-primary">Check Out</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Billing Tab -->
+    <section id="billing-tab" class="tab-content">
+      <h2>Billing & Payments</h2>
+      <div class="form-section">
+        <h3>Create Billing</h3>
+        <form id="billingForm" class="form-grid">
+          <select id="billReservation" required>
+            <option value="">Select Reservation</option>
+          </select>
+          <input type="number" id="servicesCharge" placeholder="Services Charge" step="0.01" value="0">
+          <input type="number" id="foodCharge" placeholder="Food Charge" step="0.01" value="0">
+          <input type="number" id="otherCharges" placeholder="Other Charges" step="0.01" value="0">
+          <select id="paymentMethod" required>
+            <option value="">Select Payment Method</option>
+            <option value="cash">Cash</option>
+            <option value="credit_card">Credit Card</option>
+            <option value="debit_card">Debit Card</option>
+            <option value="bank_transfer">Bank Transfer</option>
+          </select>
+          <button type="submit" class="btn-primary">Create Bill</button>
+        </form>
+      </div>
+
+      <div class="billing-list">
+        <h3>Billing Records</h3>
+        <div id="billingList" class="list-container">
+          <p>Loading billing records...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Staff Tab -->
+    <section id="staff-tab" class="tab-content">
+      <h2>Staff Coordination</h2>
+      <div class="form-section">
+        <h3>Assign Staff Task</h3>
+        <form id="staffForm" class="form-grid">
+          <input type="text" id="staffName" placeholder="Staff Name" required>
+          <select id="staffRole" required>
+            <option value="">Select Role</option>
+            <option value="housekeeping">Housekeeping</option>
+            <option value="maintenance">Maintenance</option>
+            <option value="front_desk">Front Desk</option>
+            <option value="security">Security</option>
+            <option value="room_service">Room Service</option>
+          </select>
+          <input type="text" id="assignedRoom" placeholder="Assigned Room (optional)">
+          <textarea id="taskDescription" placeholder="Task Description" rows="2"></textarea>
+          <select id="taskPriority">
+            <option value="normal">Normal</option>
+            <option value="high">High</option>
+            <option value="urgent">Urgent</option>
+          </select>
+          <button type="submit" class="btn-primary">Assign Task</button>
+        </form>
+      </div>
+
+      <div class="staff-list">
+        <h3>Staff Tasks</h3>
+        <div id="staffList" class="list-container">
+          <p>Loading staff assignments...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Tab -->
+    <section id="services-tab" class="tab-content">
+      <h2>Service Requests</h2>
+      <div class="form-section">
+        <h3>Create Service Request</h3>
+        <form id="serviceForm" class="form-grid">
+          <select id="serviceReservation" required>
+            <option value="">Select Reservation</option>
+          </select>
+          <select id="serviceType" required>
+            <option value="">Select Service Type</option>
+            <option value="housekeeping">Housekeeping</option>
+            <option value="maintenance">Maintenance</option>
+            <option value="room_service">Room Service</option>
+            <option value="laundry">Laundry</option>
+            <option value="concierge">Concierge</option>
+          </select>
+          <textarea id="serviceDescription" placeholder="Service Description" rows="2"></textarea>
+          <select id="servicePriority">
+            <option value="normal">Normal</option>
+            <option value="high">High</option>
+            <option value="urgent">Urgent</option>
+          </select>
+          <button type="submit" class="btn-primary">Submit Request</button>
+        </form>
+      </div>
+
+      <div class="services-list">
+        <h3>Service Requests</h3>
+        <div id="servicesList" class="list-container">
+          <p>Loading service requests...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reports Tab -->
+    <section id="reports-tab" class="tab-content">
+      <h2>Management Reports</h2>
+      
+      <div class="reports-section">
+        <h3>Hotel Status Report</h3>
+        <button onclick="generateHotelStatusReport()" class="btn-primary">Generate</button>
+        <div id="hotelReport" class="report-container"></div>
+      </div>
+
+      <div class="reports-section">
+        <h3>Occupancy Report</h3>
+        <button onclick="generateOccupancyReport()" class="btn-primary">Generate</button>
+        <div id="occupancyReport" class="report-container"></div>
+      </div>
+
+      <div class="reports-section">
+        <h3>Revenue Report</h3>
+        <button onclick="generateRevenueReport()" class="btn-primary">Generate</button>
+        <div id="revenueReport" class="report-container"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="hotel-client.js"></script>
+</body>
+</html>
