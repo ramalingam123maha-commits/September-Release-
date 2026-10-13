@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/Auth.css';
 
 export const LoginPage = () => {
@@ -71,7 +71,7 @@ export const LoginPage = () => {
 
         <div className="auth-footer">
           <p>
-            Don't have an account? <a href="/register">Create one</a>
+            Don't have an account? <Link to="/register">Create one</Link>
           </p>
         </div>
       </div>
@@ -185,7 +185,7 @@ export const RegisterPage = () => {
 
         <div className="auth-footer">
           <p>
-            Already have an account? <a href="/login">Sign in</a>
+            Already have an account? <Link to="/login">Sign in</Link>
           </p>
         </div>
       </div>
