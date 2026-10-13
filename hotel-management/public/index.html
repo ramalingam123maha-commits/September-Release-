@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Horizon - Luxury Hotel Management System</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="hotel-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="hotel-sidebar">
+      <div class="hotel-brand">
+        <div class="hotel-logo">🏨</div>
+        <div>
+          <h2>Grand Horizon</h2>
+          <small>Resort & Luxury Suites</small>
+        </div>
+      </div>
+
+      <nav class="hotel-nav">
+        <button class="nav-btn active" data-tab="rooms">
+          <span class="icon">🛏️</span>
+          <span>Rooms & Occupancy</span>
+        </button>
+        <button class="nav-btn" data-tab="reservations">
+          <span class="icon">📅</span>
+          <span>Reservations</span>
+        </button>
+        <button class="nav-btn" data-tab="checkinout">
+          <span class="icon">🛎️</span>
+          <span>Check-In / Out Desk</span>
+        </button>
+        <button class="nav-btn" data-tab="billing">
+          <span class="icon">💳</span>
+          <span>Billing & Folios</span>
+        </button>
+        <button class="nav-btn" data-tab="staff">
+          <span class="icon">👔</span>
+          <span>Staff Coordination</span>
+        </button>
+      </nav>
+
+      <div class="ws-status-card">
+        <div class="ws-indicator" id="wsIndicator"></div>
+        <div>
+          <strong id="wsStatusText">Connecting...</strong>
+          <small>Live WebSocket Telemetry</small>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="hotel-main">
+      <!-- Top header bar -->
+      <header class="hotel-header">
+        <div>
+          <h1 id="tabHeading">Rooms & Occupancy Matrix</h1>
+          <p class="subtitle" id="tabSubtitle">Real-time room availability, pricing, and guest turnover status</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-gold" onclick="openNewBookingModal()">+ New Booking</button>
+          <button class="btn btn-outline" onclick="openNewTaskModal()">+ Staff Task</button>
+        </div>
+      </header>
+
+      <!-- KPI Ribbon -->
+      <section class="kpi-ribbon">
+        <div class="kpi-card">
+          <span class="kpi-title">Total Rooms</span>
+          <h3 id="kpiTotalRooms">6</h3>
+          <span class="kpi-sub">Across 2 wings</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-title">Occupancy Rate</span>
+          <h3 id="kpiOccupancy">0%</h3>
+          <span class="kpi-sub" id="kpiOccupancyDetail">0 occupied</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-title">Active Bookings</span>
+          <h3 id="kpiActiveBookings">0</h3>
+          <span class="kpi-sub">Confirmed & in-house</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-title">Pending Staff Tasks</span>
+          <h3 id="kpiPendingTasks">0</h3>
+          <span class="kpi-sub">Housekeeping & Concierge</span>
+        </div>
+      </section>
+
+      <!-- Live Broadcast Event Feed Banner -->
+      <div class="live-event-ticker" id="liveTicker">
+        <span class="ticker-badge">⚡ LIVE WS</span>
+        <span class="ticker-text" id="tickerMessage">WebSocket connected to Grand Horizon Event Bus</span>
+      </div>
+
+      <!-- TAB: ROOMS & OCCUPANCY -->
+      <section id="pane-rooms" class="content-pane active">
+        <div class="pane-card">
+          <div class="pane-header">
+            <h3>Floorplan & Room Status</h3>
+            <div class="filter-pills">
+              <button class="pill active" onclick="filterRooms('All')">All</button>
+              <button class="pill" onclick="filterRooms('Available')">Available</button>
+              <button class="pill" onclick="filterRooms('Occupied')">Occupied</button>
+              <button class="pill" onclick="filterRooms('Reserved')">Reserved</button>
+              <button class="pill" onclick="filterRooms('Maintenance')">Maintenance</button>
+            </div>
+          </div>
+          <div class="rooms-grid" id="roomsGrid"></div>
+        </div>
+      </section>
+
+      <!-- TAB: RESERVATIONS -->
+      <section id="pane-reservations" class="content-pane">
+        <div class="pane-card">
+          <div class="pane-header">
+            <h3>Reservation Log & Schedules</h3>
+            <button class="btn btn-gold btn-sm" onclick="openNewBookingModal()">+ Create Reservation</button>
+          </div>
+          <div class="table-responsive">
+            <table class="horizon-table">
+              <thead>
+                <tr>
+                  <th>Res ID</th>
+                  <th>Guest Name</th>
+                  <th>Contact</th>
+                  <th>Room Assigned</th>
+                  <th>Check-In</th>
+                  <th>Check-Out</th>
+                  <th>Total Cost</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="reservationsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: CHECK-IN / CHECK-OUT DESK -->
+      <section id="pane-checkinout" class="content-pane">
+        <div class="grid-2col">
+          <div class="pane-card">
+            <div class="pane-header">
+              <h3>🛎️ Arrivals & Check-In Desk</h3>
+              <span class="badge badge-info">Confirmed Reservations</span>
+            </div>
+            <div class="desk-list" id="checkInList"></div>
+          </div>
+
+          <div class="pane-card">
+            <div class="pane-header">
+              <h3>🚪 Departures & Express Check-Out</h3>
+              <span class="badge badge-success">Currently In-House</span>
+            </div>
+            <div class="desk-list" id="checkOutList"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: BILLING & FOLIOS -->
+      <section id="pane-billing" class="content-pane">
+        <div class="pane-card mb-24">
+          <div class="pane-header">
+            <h3>Guest Folios & Invoices</h3>
+            <span class="text-muted">Itemized billing with automatic tax & service compute</span>
+          </div>
+          <div class="table-responsive">
+            <table class="horizon-table">
+              <thead>
+                <tr>
+                  <th>Invoice ID</th>
+                  <th>Guest</th>
+                  <th>Room</th>
+                  <th>Subtotal</th>
+                  <th>Tax (10%)</th>
+                  <th>Total</th>
+                  <th>Paid</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="billingTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Selected Invoice Detail Sheet -->
+        <div class="pane-card" id="invoiceDetailSection" style="display:none;">
+          <div class="pane-header">
+            <h3 id="invoiceDetailTitle">Folio Details</h3>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-outline btn-sm" onclick="promptAddCharge()">+ Add Service Charge</button>
+              <button class="btn btn-gold btn-sm" onclick="promptSettlePayment()">💳 Settle Folio</button>
+            </div>
+          </div>
+          <div id="invoiceDetailBody"></div>
+        </div>
+      </section>
+
+      <!-- TAB: STAFF COORDINATION -->
+      <section id="pane-staff" class="content-pane">
+        <div class="pane-card">
+          <div class="pane-header">
+            <h3>Housekeeping & Engineering Task Coordination</h3>
+            <button class="btn btn-gold btn-sm" onclick="openNewTaskModal()">+ Dispatch Task</button>
+          </div>
+          <div class="staff-kanban">
+            <div class="kanban-col">
+              <div class="kanban-col-head">
+                <span class="dot dot-amber"></span>
+                <span>Pending Dispatch</span>
+                <span class="count-tag" id="staffPendingCount">0</span>
+              </div>
+              <div class="kanban-cards" id="tasksPendingList"></div>
+            </div>
+
+            <div class="kanban-col">
+              <div class="kanban-col-head">
+                <span class="dot dot-blue"></span>
+                <span>In Progress</span>
+                <span class="count-tag" id="staffProgressCount">0</span>
+              </div>
+              <div class="kanban-cards" id="tasksProgressList"></div>
+            </div>
+
+            <div class="kanban-col">
+              <div class="kanban-col-head">
+                <span class="dot dot-green"></span>
+                <span>Resolved & Inspected</span>
+                <span class="count-tag" id="staffCompletedCount">0</span>
+              </div>
+              <div class="kanban-cards" id="tasksCompletedList"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL: NEW RESERVATION -->
+  <div class="modal-layer" id="bookingModal">
+    <div class="modal-window">
+      <div class="modal-head">
+        <h3>Create Guest Reservation</h3>
+        <button class="close-x" onclick="closeModal('bookingModal')">✕</button>
+      </div>
+      <form id="bookingForm" onsubmit="submitNewBooking(event)" class="modal-form">
+        <div class="form-row">
+          <div class="input-field">
+            <label>Guest Full Name *</label>
+            <input type="text" id="resGuestName" required placeholder="e.g. Lorde Harrington">
+          </div>
+          <div class="input-field">
+            <label>Guest Email Address *</label>
+            <input type="email" id="resGuestEmail" required placeholder="guest@domain.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-field">
+            <label>Phone Contact *</label>
+            <input type="text" id="resGuestPhone" required placeholder="+1 (555) 902-1847">
+          </div>
+          <div class="input-field">
+            <label>Select Room *</label>
+            <select id="resRoomSelect" required></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-field">
+            <label>Check-In Date *</label>
+            <input type="date" id="resCheckIn" required>
+          </div>
+          <div class="input-field">
+            <label>Check-Out Date *</label>
+            <input type="date" id="resCheckOut" required>
+          </div>
+        </div>
+        <div class="input-field">
+          <label>Initial Deposit / Advance Payment ($)</label>
+          <input type="number" id="resAdvancePayment" value="0" min="0">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" onclick="closeModal('bookingModal')">Cancel</button>
+          <button type="submit" class="btn btn-gold">Confirm Booking & Generate Folio</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: NEW STAFF TASK -->
+  <div class="modal-layer" id="taskModal">
+    <div class="modal-window">
+      <div class="modal-head">
+        <h3>Dispatch Staff Task</h3>
+        <button class="close-x" onclick="closeModal('taskModal')">✕</button>
+      </div>
+      <form id="taskForm" onsubmit="submitNewTask(event)" class="modal-form">
+        <div class="input-field">
+          <label>Task Description *</label>
+          <input type="text" id="taskTitle" required placeholder="e.g. Full linen change & sanitize mini bar">
+        </div>
+        <div class="form-row">
+          <div class="input-field">
+            <label>Department *</label>
+            <select id="taskDepartment" required>
+              <option value="Housekeeping">Housekeeping</option>
+              <option value="Maintenance">Maintenance & Engineering</option>
+              <option value="Concierge">Concierge & Bell Desk</option>
+              <option value="Food & Beverage">Food & Beverage (Room Service)</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label>Room Number</label>
+            <input type="text" id="taskRoom" placeholder="e.g. 101 or Lobby">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-field">
+            <label>Staff Assignee</label>
+            <input type="text" id="taskAssignee" placeholder="e.g. Maria Santos">
+          </div>
+          <div class="input-field">
+            <label>Priority</label>
+            <select id="taskPriority">
+              <option value="Normal">Normal</option>
+              <option value="High">High</option>
+              <option value="Urgent">Urgent</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-field">
+          <label>Notes / Operational Details</label>
+          <textarea id="taskNotes" rows="2" placeholder="Specific guest requests or instructions"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" onclick="closeModal('taskModal')">Cancel</button>
+          <button type="submit" class="btn btn-gold">Dispatch Task via WebSocket</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
