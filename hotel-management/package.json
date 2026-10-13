@@ -1,0 +1,14 @@
+{
+  "name": "grand-horizon-hotel-management",
+  "version": "1.0.0",
+  "description": "Hotel Management System with Real-Time WebSocket updates for room bookings, check-in/out, billing, and staff coordination",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.17.0"
+  }
+}
