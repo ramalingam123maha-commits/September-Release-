@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="login-container" class="login-container">
+      <div class="login-box">
+        <h1>Student Management Dashboard</h1>
+        <div class="tabs">
+          <button class="tab-button active" onclick="switchTab('admin')">Admin Login</button>
+          <button class="tab-button" onclick="switchTab('student')">Student Login</button>
+        </div>
+        
+        <div id="admin-login" class="tab-content active">
+          <form onsubmit="loginAdmin(event)">
+            <input type="text" placeholder="Username" id="admin-username" required>
+            <input type="password" placeholder="Password" id="admin-password" required>
+            <button type="submit">Login</button>
+            <p id="admin-error" class="error"></p>
+          </form>
+        </div>
+
+        <div id="student-login" class="tab-content">
+          <form onsubmit="loginStudent(event)">
+            <input type="email" placeholder="Email" id="student-email" required>
+            <input type="password" placeholder="Password" id="student-password" required>
+            <button type="submit">Login</button>
+            <p id="student-error" class="error"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="dashboard" class="dashboard hidden">
+      <nav class="navbar">
+        <div class="nav-brand">
+          <h2>Student Management Dashboard</h2>
+        </div>
+        <div class="nav-menu">
+          <span id="user-info"></span>
+          <button onclick="logout()">Logout</button>
+        </div>
+      </nav>
+
+      <div class="container">
+        <aside class="sidebar">
+          <ul id="menu">
+            <li><a href="#" onclick="showPage('dashboard')">Dashboard</a></li>
+            <li><a href="#" onclick="showPage('students')">Students</a></li>
+            <li><a href="#" onclick="showPage('enrollments')">Enrollments</a></li>
+            <li><a href="#" onclick="showPage('progress')">Progress</a></li>
+            <li><a href="#" onclick="showPage('reports')">Reports</a></li>
+            <li><a href="#" onclick="showPage('profile')">My Profile</a></li>
+          </ul>
+        </aside>
+
+        <main class="content">
+          <!-- Dashboard Page -->
+          <div id="dashboard-page" class="page active">
+            <h1>Dashboard</h1>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <h3>Total Students</h3>
+                <p id="total-students">0</p>
+              </div>
+              <div class="stat-card">
+                <h3>Active Students</h3>
+                <p id="active-students">0</p>
+              </div>
+              <div class="stat-card">
+                <h3>Graduated</h3>
+                <p id="graduated-students">0</p>
+              </div>
+              <div class="stat-card">
+                <h3>Average GPA</h3>
+                <p id="avg-gpa">0.00</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Students Page -->
+          <div id="students-page" class="page">
+            <div class="page-header">
+              <h1>Student Management</h1>
+              <button id="add-student-btn" onclick="openAddStudentModal()">Add Student</button>
+            </div>
+
+            <div class="filters">
+              <input type="text" placeholder="Search by name or email" id="search-student" onkeyup="searchStudents()">
+              <select id="filter-status" onchange="filterStudents()">
+                <option value="">All Status</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+                <option value="Suspended">Suspended</option>
+                <option value="Graduated">Graduated</option>
+              </select>
+            </div>
+
+            <table id="students-table" class="data-table">
+              <thead>
+                <tr>
+                  <th>Registration #</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Program</th>
+                  <th>GPA</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="students-tbody">
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Enrollments Page -->
+          <div id="enrollments-page" class="page">
+            <div class="page-header">
+              <h1>Enrollment Management</h1>
+              <button id="add-enrollment-btn" onclick="openAddEnrollmentModal()">Add Enrollment</button>
+            </div>
+
+            <table id="enrollments-table" class="data-table">
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Course</th>
+                  <th>Status</th>
+                  <th>Grade</th>
+                  <th>Attendance</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="enrollments-tbody">
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Progress Page -->
+          <div id="progress-page" class="page">
+            <h1>Student Progress</h1>
+            <div id="progress-content">
+              <table id="progress-table" class="data-table">
+                <thead>
+                  <tr>
+                    <th>Student</th>
+                    <th>Semester</th>
+                    <th>GPA</th>
+                    <th>Credits</th>
+                    <th>Standing</th>
+                  </tr>
+                </thead>
+                <tbody id="progress-tbody">
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Reports Page -->
+          <div id="reports-page" class="page">
+            <h1>Reports</h1>
+            <div class="report-options">
+              <button onclick="generatePerformanceReport()">Performance Report</button>
+              <button onclick="generateEnrollmentStats()">Enrollment Statistics</button>
+            </div>
+            <div id="report-content"></div>
+          </div>
+
+          <!-- Profile Page -->
+          <div id="profile-page" class="page">
+            <h1>My Profile</h1>
+            <div id="profile-content" class="profile-card">
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="add-student-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('add-student-modal')">&times;</span>
+      <h2>Add New Student</h2>
+      <form onsubmit="addStudent(event)" id="add-student-form">
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="tel" placeholder="Phone">
+        <input type="text" placeholder="Program" required>
+        <input type="date" placeholder="Date of Birth">
+        <button type="submit">Register Student</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="add-enrollment-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('add-enrollment-modal')">&times;</span>
+      <h2>Add Enrollment</h2>
+      <form onsubmit="addEnrollment(event)" id="add-enrollment-form">
+        <select id="enrollment-student" required>
+          <option value="">Select Student</option>
+        </select>
+        <select id="enrollment-course" required>
+          <option value="">Select Course</option>
+        </select>
+        <button type="submit">Enroll Student</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
