@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Login - HTML Based</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-wrapper" id="loginWrapper">
+            <!-- Login Form -->
+            <div class="form-container login-form" id="loginForm">
+                <div class="form-header">
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your account</p>
+                </div>
+
+                <form id="loginFormElement" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="loginEmail" 
+                            name="email" 
+                            placeholder="Enter your email" 
+                            required
+                        >
+                        <span class="error-message" id="loginEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="password" 
+                                id="loginPassword" 
+                                name="password" 
+                                placeholder="Enter your password" 
+                                required
+                            >
+                            <button 
+                                type="button" 
+                                class="toggle-password" 
+                                onclick="togglePasswordVisibility('loginPassword')"
+                            >
+                                <span class="eye-icon">👁️</span>
+                            </button>
+                        </div>
+                        <span class="error-message" id="loginPasswordError"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input 
+                            type="checkbox" 
+                            id="rememberMe" 
+                            name="rememberMe"
+                        >
+                        <label for="rememberMe" class="checkbox-label">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+
+                    <div class="form-divider">
+                        <span>or</span>
+                    </div>
+
+                    <button type="button" class="btn btn-secondary btn-block" onclick="showForgotPassword()">
+                        Forgot Password?
+                    </button>
+
+                    <div class="message-container" id="loginMessage"></div>
+                </form>
+
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" onclick="switchToRegister(event)">Create one</a></p>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div class="form-container register-form hidden" id="registerForm">
+                <div class="form-header">
+                    <h1>Join Us</h1>
+                    <p>Create your account</p>
+                </div>
+
+                <form id="registerFormElement" onsubmit="handleRegister(event)">
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input 
+                            type="text" 
+                            id="registerUsername" 
+                            name="username" 
+                            placeholder="Choose a username" 
+                            required
+                        >
+                        <span class="error-message" id="registerUsernameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerEmail">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="registerEmail" 
+                            name="email" 
+                            placeholder="Enter your email" 
+                            required
+                        >
+                        <span class="error-message" id="registerEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="password" 
+                                id="registerPassword" 
+                                name="password" 
+                                placeholder="Create a password (min 6 characters)" 
+                                required
+                            >
+                            <button 
+                                type="button" 
+                                class="toggle-password" 
+                                onclick="togglePasswordVisibility('registerPassword')"
+                            >
+                                <span class="eye-icon">👁️</span>
+                            </button>
+                        </div>
+                        <span class="error-message" id="registerPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="password" 
+                                id="confirmPassword" 
+                                name="confirmPassword" 
+                                placeholder="Confirm your password" 
+                                required
+                            >
+                            <button 
+                                type="button" 
+                                class="toggle-password" 
+                                onclick="togglePasswordVisibility('confirmPassword')"
+                            >
+                                <span class="eye-icon">👁️</span>
+                            </button>
+                        </div>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input 
+                            type="checkbox" 
+                            id="agreeTerms" 
+                            name="agreeTerms" 
+                            required
+                        >
+                        <label for="agreeTerms" class="checkbox-label">
+                            I agree to the <a href="#" onclick="return false;">Terms & Conditions</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+
+                    <div class="message-container" id="registerMessage"></div>
+                </form>
+
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" onclick="switchToLogin(event)">Sign in</a></p>
+                </div>
+            </div>
+
+            <!-- Dashboard -->
+            <div class="dashboard hidden" id="dashboard">
+                <div class="dashboard-header">
+                    <h1>Welcome, <span id="dashboardUsername"></span>! 👋</h1>
+                    <button class="btn btn-danger" onclick="handleLogout()">Logout</button>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="user-card">
+                        <div class="user-avatar" id="userAvatar"></div>
+                        <div class="user-info">
+                            <h2 id="profileUsername"></h2>
+                            <p id="profileEmail"></p>
+                        </div>
+                    </div>
+
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-label">Account Status</div>
+                            <div class="stat-value">Active ✓</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Login Count</div>
+                            <div class="stat-value" id="loginCount">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Last Login</div>
+                            <div class="stat-value" id="lastLoginTime">Now</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Member Since</div>
+                            <div class="stat-value" id="memberSince">Today</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
